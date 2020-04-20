@@ -1,21 +1,20 @@
 >> Author: Lâm Thành Nhân\
 >> Email: ltnhan.st.94@gmail.com
-# Tìm ảnh trong cửa sổ (inactive) cho AutoIt hỗ trợ tolerance
+# ImageSearch Inactive (Background) Window cho AutoIt
 > UDF HandleImgSearch.au3 sử dụng với mục đích tìm ảnh trong Handle của cửa sổ (cửa sổ không cần active). Cải tiến từ UDF ImageSearchEX.au3 và ImageSearchDLL.au3 (không phụ thuộc vào file .dll).\
 > UDF này được tổng hợp và bổ sung từ nhiều nguồn, đầu mỗi Func sưu tầm mình đều giữ lại thông tin tác giả.
-
 ### Ưu điểm:
-    - Rất nhanh nhờ embbed ImageSearchDll, không phụ thuộc file khác.
+    - Rất nhanh (tích hợp ImageSearchDll ngay trong UDF).
     - Hỗ trợ Tolerance (Sai số màu sắc) và MaxImg (Tìm nhiều ảnh cùng lúc).
-    - Tối ưu tốt, không leak memory (trong giới hạn test của mình).
+    - Tối ưu tốt, không leak memory.
     - Tìm kiếm qua Handle cửa sổ hoặc toàn màn hình dễ dàng.
-    - Hỗ trợ global function, chỉ chụp 1 lần, tái sử dụng nhiều lần để tiết kiệm thời gian chụp ảnh.
+    - Hỗ trợ global function (Sử dụng được nhiều hàm xử lý với 1 lần chụp).
     - Có ví dụ kèm theo cho từng hàm.
 ### Nhược điểm:
     - Tốc độ tìm nhiều ảnh sẽ chậm hơn BmpSearch đôi chút (Có Branch BmpSearch kèm theo).
-    - Chỉ hỗ trợ 32bit (Mình nghĩ không quá quan trọng).
+    - Chỉ hỗ trợ compile AutoIt 32bit (chạy được trên Windows 64bit).
 
-### Hàm sử dụng cho Global:
+### Hàm global:
     _GlobalImgInit
     _GlobalImgCapture
     _GlobalGetBitmap
@@ -23,7 +22,7 @@
     _GlobalImgSearch
     _GlobalGetPixel
     _GlobalPixelCompare
-### Hàm sử dụng cho Handle
+### Hàm Handle:
     _HandleImgSearch
     _BmpImgSearch
     _HandleGetPixel
